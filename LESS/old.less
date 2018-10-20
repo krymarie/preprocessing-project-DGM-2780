@@ -1,0 +1,145 @@
+// home LESS
+@phone: (max-width: 700px);
+
+html {
+  font-size: 62.5%;
+}
+
+.center(){
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.bottom(){
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+.right() {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+
+.center-vert(){
+  display: flex;
+  align-items: center;
+}
+
+header {
+  background: gray;
+  //height: 200px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  .top-add {
+    .center;
+    width: 100%;
+    height: 8.2rem;
+    padding: 14px 0 14px 0;
+    background: yellow;
+
+    a {
+      font-size: 2.2em;
+    }
+
+  }
+
+  .social-search {
+    .right;
+    width: 100%;
+    height: 6em;
+    background: purple;
+    padding-right: 2em;
+
+    @media @phone {
+      display: none;
+    }
+
+    a {
+    font-size: 2em;
+    padding: 1em .5em 1em .5em;
+    }
+  }
+  
+  .nav-container {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    
+    h1 {
+      color: white;
+      font-size: 3.2em;
+      height: 100px;
+      width: 100%;
+      background: red;
+      .center;
+    }
+    
+    nav {
+    .bottom;
+    width: 100%;
+    
+    a {
+      font-size: 2.2em;
+      color: white;
+      margin: 14px 21px 21px 21px;
+
+    }
+  }
+ } 
+}
+
+
+body {
+.container {
+  max-width: 1220px;
+  margin: 0 auto;
+  border: 1px solid red;
+}
+
+.home {
+  display: flex;
+  justify-content: space-evenly;
+  height: 400px;
+  
+  @media @phone {
+      flex-wrap: wrap;
+  }
+  
+  .left-content {
+    width: 18%;
+    border: 1px solid blue;
+    background: blue;
+    
+    @media @phone {
+      width: 100%;
+    }
+  }
+  
+  .center-content {
+    width: 54%;
+    border: 1px solid orange;
+    background: orange;
+    
+     @media @phone {
+      width: 100%;
+    }
+  }
+  
+  .right-content {
+    width: 25%;
+    border: 1px solid green;
+    background: green;
+    
+     @media @phone {
+      width: 100%;
+    }
+  }
+}
+}
