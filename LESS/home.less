@@ -1,6 +1,5 @@
 // home LESS
-@phone: (max-width: 700px);
-@tablet: (max-width: 900px);
+
 
 html {
   font-size: 62.5%;
@@ -33,11 +32,12 @@ html {
 
 //HOME HEADER LESS
 header {
-  background: gray;
+  background: @secondary-color;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-
+  
+  //TOP BANNER ADD
   .top-add {
     .center;
     width: 100%;
@@ -49,14 +49,14 @@ header {
       font-size: 2.2em;
       color: white;
     }
-
   }
-
+  
+  //SOCIAL MEDIA BAR(displayed only on desktop)
   .social-search {
     .right;
     width: 100%;
     height: 6em;
-    background: gray;
+    background: @secondary-color;
     padding-right: 2em;
 
     @media @tablet {
@@ -69,6 +69,7 @@ header {
     }
   }
   
+  //HOME NAVIGATION BAR
   .nav-container {
     width: 100%;
     display: flex;
@@ -97,41 +98,53 @@ header {
   }
  } 
 }
-
+//HOME BODY LESS
 body {
-
+//SLICK SLIDE PLACEHOLDER
 .slider {
   width: 100%;
   padding-bottom: 3em;
 
   .slick-slide {
     width: 100%;
-    height: 600px;
-    background: lightgray;
+    height: auto;
   }
 }
 
 .container {
   display: flex;
-  max-width: 1220px;
+  max-width: 1170px;
   height: auto;
   padding: 0 2em 2em 2em;
   margin: 0 auto;
   flex-wrap: wrap;
-  border: 0 solid red;
+
+   @media @phone {
+      padding: 0;
+  }
 }
 
 .home {
   display: flex;
   justify-content: space-evenly;
+  font-family: @font-stack;
 
+  @media @phone {
+      h3 {
+        padding: .2em;
+      }
+
+      h4 {
+        padding: .2em;
+      }
+    }
 
 
 .featured-products-header {
-    width: 97%;
+    width: 90%;
     text-align: center;
     font-size: 3.2em;
-    margin-bottom: 1em;
+    margin-bottom: 1.4em;
 }
 
 .new-products-header {
@@ -139,49 +152,180 @@ body {
     text-align: center;
     font-size: 3.2em;
     margin-bottom: 1em;
-}
+    margin-top: 1em;
+}  
 
-  
 .featured-products {
     width: 22%;
-    height: 35em;
-    background: gray;
-    
     margin: 1.2em;
+    margin-bottom: 9.4em;
+
+  .product-image {
+    width: 100%;
+    height: auto;
+  }
 
    @media @tablet {
       width: 45%;
    }
     @media @phone {
       width: 100%;
+      margin: 1.2em 0 1.2em 0;
     }
 }
 
 
 .new-products {
-    width: 22%;
-    height: 35em;
-    background: gray;
-    flex-wrap: wrap;
+    width: 17%;
     margin: 1.2em;
+
+  .product-image {
+    width: 100%;
+    height: auto;
+  }
 
    @media @tablet {
       width: 45%;
    }
     @media @phone {
       width: 100%;
+      margin: 1.2em 0 1.2em 0;
+
     }
 }
 
 
 
+}
+}
 
-//older end caps
+ //HOME FOOTER LESS
+footer {
+  margin-top: 10em;
+  .center;
+  font-family: @font-stack;
+  background: lightgray;
+  display: flex;
+  flex-wrap: wrap;
+
+  .footer-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    width: 1170px;
+    margin: 0 auto;
+    padding: 0 5em;
+  
+  
+  //HOME BOTTOM SOCIAL LESS
+  .bottom-social-header {
+    .right;
+    width: 100%;
+    margin-top: 5.3em;
+
+
+    @media @tablet {
+      .center;
+   }
+  }
+
+  .bottom-social {
+    .right;
+    width: 100%;
+    margin-top: 2.5em;
+    padding-bottom: 5.6em;
+
+    @media @tablet {
+      .center;
+   }
+
+    a {
+      padding-left: 14px;
+      font-size: 2.2em;
+      color: white;
+    }
+  }
+  
+  .footer-content {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    font-family: @font-stack;
+    padding-bottom: 10em;
 
 
 
+  .footer-content-columns {
+    display: flex;
+    flex-wrap: wrap;
+    width: 13%;
+    margin: 1.2em;
+    height: 33em;
+    background-color: @secondary-color;
+    padding: 1em;
+ 
 
+   @media @tablet {
+      width: 45%;
+   }
+    @media @phone {
+      width: 100%;
+      margin: 1.2em 0 1.2em 0;
+
+    }
+} 
+
+    .footer-content-subscribe {
+    display: flex;
+    flex-wrap: wrap;
+    width: 32%;
+    margin: 1.2em;
+    height: 33em;
+    background-color: @secondary-color;
+    padding: 1em;
+
+
+    .custom-btn(@width: 200px, @height, @background, @font-size, @font-color) {
+      width: @width;
+      height: @height;
+      background: @background;
+      font-size: @font-size;
+      color: @font-color;
+      border-radius: 4px;
+  
+  &:hover {
+    background: @font-color;
+    color: @background;
+  }
+  
+}
+
+    .btn {
+     .custom-btn(400px, 50px, red, 40px, white);
+
+@media @tablet {
+      width: 100%;
+      margin: 1.2em 2em;
+   }
+
+}
+ 
+
+   @media @tablet {
+      width: 100%;
+      margin: 1.2em 2em;
+   }
+    @media @phone {
+      width: 100%;
+      margin: 1.2em 0 1.2em 0;
+
+    }
+}
+}
 
 }
 }
+
+
+
 }
